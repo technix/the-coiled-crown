@@ -1,0 +1,13 @@
+{
+    "name": "The Coiled Crown",
+    "short_name": "the-coiled-crown-atrament",
+    "description": "The Coiled Crown - a gamebook by Sersa Victory",
+    "theme": "game",
+    "font": "Lora",
+    "language": "en",
+    "game": {
+        "path": "game",
+        "source": "the-coiled-crown.ink",
+        "script": "the-coiled-crown.ink.json"
+    }
+}

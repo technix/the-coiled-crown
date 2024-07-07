@@ -1,20 +1,31 @@
-// Application ID
-// - uses page URL to make sure it's unique
-
-export const applicationID = 'the-coiled-crown-1.0';
+import cfg from '../atrament.config.json';
 
 // Ink file
 
-export const gamePath = 'assets/game';
-export const gameFile = 'the-coiled-crown.ink.json';
+export const gamePath = cfg.game.path;
+export const gameFile = cfg.game.script;
+
+// Application ID
+// - uses page URL to make sure it's unique
+
+export const applicationID = [
+  'Atrament://',
+  window.location.host,
+  window.location.pathname,
+  gamePath,
+  gameFile
+].join('');
 
 //// Settings ////
 
+// language
+export const appLanguage = cfg.language || 'en';
+
 // theme
-export const gameDefaultTheme = 'game';
+export const gameDefaultTheme = cfg.theme;
 
 // font
-export const gameDefaultFont = 'Lora';
+export const gameDefaultFont = cfg.font;
 
 // Font size range and step (percentage)
 export const defaultFontSize = 100;
@@ -22,4 +33,3 @@ export const stepFontSize = 10;
 export const minFontSize = defaultFontSize - ( stepFontSize * 3);
 export const maxFontSize = defaultFontSize + ( stepFontSize * 5);
 
-export const sampleFontsizeText = 'The quick brown fox jumps over the lazy dog. Jackdaws love my big sphinx of quartz.';

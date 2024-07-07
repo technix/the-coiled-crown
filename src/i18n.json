@@ -1,0 +1,40 @@
+[
+  {
+    "language": "en",
+    "messages": {
+      "default.title": "Atrament UI",
+      "default.author": "Test Application",
+      "main.menu": "Main menu",
+      "main.newgame": "New game",
+      "main.continue": "Continue",
+      "main.about": "About",
+      "game.end": "The end",
+      "settings.fullscreen": "Fullscreen",
+      "settings.animations": "Animations",
+      "settings.sound": "Sound",
+      "themes.light": "light",
+      "themes.sepia": "sepia",
+      "themes.dark": "dark",
+      "font.sampleText": "The quick brown fox jumps over the lazy dog. Jackdaws love my big sphinx of quartz."
+    }
+  },
+  {
+    "language": "ua",
+    "messages": {
+      "default.title": "Atrament UI",
+      "default.author": "Тестовий застосунок",
+      "main.menu": "Головне меню",
+      "main.newgame": "Нова гра",
+      "main.continue": "Продовжити",
+      "main.about": "Про застосунок",
+      "game.end": "Кінець",
+      "settings.fullscreen": "На весь екран",
+      "settings.animations": "Анімації",
+      "settings.sound": "Звук",
+      "themes.light": "Світла",
+      "themes.sepia": "Сепія",
+      "themes.dark": "Темна",
+      "font.sampleText": "Хвацький юшковар Філіп щодня на ґанку готує сім'ї вечерю з жаб."
+    }
+  }
+]

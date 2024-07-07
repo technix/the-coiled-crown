@@ -1,5 +1,6 @@
 import processMarkup from './markup';
 import preloadImages from 'src/utils/preload-images';
+import { getAssetPath } from "src/utils/get-asset-path";
 
 export default async function customInit(atrament) {
   // scene processor - process game-specific markup
@@ -9,8 +10,8 @@ export default async function customInit(atrament) {
     );
   });
   // preload images
-  await preloadImages([
-    'assets/written-in-ink.png',
-    'assets/game/images/cover.jpg'
+  await preloadImages(getAssetPath, [
+    'written-in-ink.png',
+    'images/cover.jpg'
   ]);
 }
