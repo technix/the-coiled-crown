@@ -1,6 +1,6 @@
 # The Coiled Crown
 
-## [Play the game](https://technix.github.io/the-coiled-crown/)
+## [Play the game](https://technix.itch.io/the-coiled-crown/)
 
 ## About
 
