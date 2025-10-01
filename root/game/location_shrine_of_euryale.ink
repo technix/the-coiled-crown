@@ -39,7 +39,7 @@ An inscription is etched around her neck like a pendant. Tracing your fingers ov
     
     “My mother seeks in agony my final resting place in the [highlight]tombs outside this holy keep[/highlight]. Woefully, she does not know that my body and spirit are bound to this forgotten shrine, and so I must wait for her.”
 	// + [To venture back outside the Scorched Keep] -> location_bridge_of_hollows
-+ {RVK} [Examine the inscription closely]
++ [Examine the inscription closely#{not RVK:UNCLICKABLE}]
     As if by some miracle, the heretofore unintelligible inscription across the collarbone of the stone idol shifts into writing you can understand:
     
     “The maiden Althea with her gaze so disarming was said to be the daughter of Euryale herself. Rather than suffer the ravages of the Carnophage, Althea cried out to her divine mother and was turned to stone so that she would never know the cruel fever that heralded the end. So deep was Althea’s faith that she sang with her last breath: ‘Bless my serpent tongue and heart of stone.’”

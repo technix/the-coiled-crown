@@ -55,7 +55,7 @@ Numberless souls have journeyed into the netherworld in search of the Coiled Cro
 
 {not RVK: You hear a quiet whisper coming from the fog, "Seek revelation". The fog gate does not let you enter. }
 
-+ {RVK} [Enter the Gate] -> location_throne_of_cinder
++ [Enter the Gate#{not RVK:UNCLICKABLE}] -> location_throne_of_cinder
 + [Go back to Scorched Keep] -> location_scorched_keep
 
 
