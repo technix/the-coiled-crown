@@ -1,7 +1,10 @@
 # title: The Coiled Crown
 # author: A gamebook by Sersa Victory
 # toolbar: player_toolbar
+# about: game_about
+# cover: images/cover.jpg
 
+INCLUDE about.ink
 INCLUDE toolbar.ink
 INCLUDE location_netherworld_forest.ink
 INCLUDE location_forest_cliff_face.ink
@@ -46,7 +49,7 @@ After wedging open an unassuming steel door with your sword, you climbed a spira
 # IMAGE: images/sarchophagus.jpg
 You step into the shafts of overcast daylight and look down upon the sarcophagus. Its' cover stone bears the likeness of a regal hooded woman, her outline traced in brass. 
 
-The phrase “[red]<i>holy are those sisters who rise to lead</i>[/red]” is etched above her head. This must be where the ancient queen is buried — and with her, the Coiled Crown you so desperately seek.
+The phrase “[highlight]<i>holy are those sisters who rise to lead</i>[/highlight]” is etched above her head. This must be where the ancient queen is buried — and with her, the Coiled Crown you so desperately seek.
 
 + [Open the sarcophagus]
 -

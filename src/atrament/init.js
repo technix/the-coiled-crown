@@ -1,19 +1,16 @@
 
-import { applicationID, gameFile, gamePath } from 'src/constants';
+import { applicationID, gameFile, gamePath, defaultVolume, defaultFontSize, STORYPATH_STORE_KEY } from 'src/constants';
 
 import muteWhenInactive from 'src/utils/mute-when-inactive';
-import { registerGetAssetPath } from 'src/utils/get-asset-path';
 
 import { loadDefaultFont, loadDefaultTheme } from 'src/atrament/load-defaults';
 import { registerSettingsHandlers } from 'src/atrament/settings-handlers'
 import registerSceneProcessors from 'src/atrament/scene-processors';
+import registerExternalFunctions from 'src/atrament/externals';
 
 import onGameStart from 'src/atrament/on-game-start';
 
-import customInit from 'src/custom/init';
-
 export default async function atramentInit(atrament, Story) {
-  console.log(import.meta.env);
   // show all events in console
   atrament.on('*', (event, message) => console.log(
     `%c Atrament > ${event} `, 'color: #111111; background-color: #7FDBFF;',
@@ -28,13 +25,11 @@ export default async function atramentInit(atrament, Story) {
       fullscreen: false,
       animation: true,
       mute: false,
-      volume: 50,
-      fontSize: 100
+      volume: defaultVolume,
+      fontSize: defaultFontSize
     }
   });
-  atrament.on('game/start', () => onGameStart(atrament));
-  // register getAssetPath function
-  registerGetAssetPath(atrament.game.getAssetPath);
+  atrament.on('game/initInkStory', () => onGameStart(atrament));
   // initialize game
   await atrament.game.init(gamePath, gameFile);
   await atrament.game.initInkStory();
@@ -43,9 +38,26 @@ export default async function atramentInit(atrament, Story) {
   loadDefaultFont(atrament);
   // register scene processors
   registerSceneProcessors(atrament);
+  // register external functions
+  registerExternalFunctions(atrament);
   // mute when tab is inactive
   muteWhenInactive(atrament);
-  // custom init
-  await customInit(atrament);
+  // set window title
+  const metadata = atrament.state.get().metadata;
+  if (metadata.title) {
+    atrament.interfaces.platform.setTitle(metadata.title);
+  }
+  // enable ink fallbacks for external functions
+  if (metadata.allow_external_function_fallbacks) {
+    atrament.ink.story().allowExternalFunctionFallbacks = true;
+  }
+  // track story path for debugging
+  if (metadata.debug) {
+    atrament.on('game/continueStory', () => {
+      // save current story path into game.$story_path for debugging purposes
+      const path = atrament.ink.story().state.previousPathString;
+      atrament.state.setSubkey('game', STORYPATH_STORE_KEY, path);
+    });
+  }
   // done
 }

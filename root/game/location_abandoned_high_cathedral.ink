@@ -31,16 +31,16 @@ The statue of a hooded priestess clutching a bowl of stone snakes towers over yo
 - (cathedral_stained_windows)
 # IMAGE: images/stained-windows-27.jpg
 You gaze upon the stained glass windows that line the cathedral walls high above. Three windows, larger than the others, are set into the wall above the altar.
-The first window shows a fiery-haired woman descending from the mountains, [red]burial mask in hand[/red].
-The second window has [red]shattered[/red] and lies in a heap of prismatic glass shards on the cold limestone floor.
-The third window shows the woman [red]pressing the mask to her face[/red], tongues of flame issuing from the now-red mask.
+The first window shows a fiery-haired woman descending from the mountains, [highlight]burial mask in hand[/highlight].
+The second window has [highlight]shattered[/highlight] and lies in a heap of prismatic glass shards on the cold limestone floor.
+The third window shows the woman [highlight]pressing the mask to her face[/highlight], tongues of flame issuing from the now-red mask.
 -> cathedral_opts
 
 - (cathedral_hymn_of_mending)
 
 You pull the hymn of mending from your pack and unroll it, the inked letters glowing faintly in the overcast daylight that shines through the stained glass windows above. You speak the words gently at first, but with each verse your voice grows louder and more confident until it echoes through the pews.
 
-The shards of glass on the floor rattle and sparks of magic dance between them. You watch as the stained glass window pulls itself back together, piece by piece, revealing the hidden second image of the three-window sequence: the woman heating the burial mask in the flames of a [red]pyre atop which a slain armored warrior rests[/red]. A moment later, the stained glass window falls to pieces once again.
+The shards of glass on the floor rattle and sparks of magic dance between them. You watch as the stained glass window pulls itself back together, piece by piece, revealing the hidden second image of the three-window sequence: the woman heating the burial mask in the flames of a [highlight]pyre atop which a slain armored warrior rests[/highlight]. A moment later, the stained glass window falls to pieces once again.
 
 -> cathedral_opts
 
@@ -48,7 +48,7 @@ The shards of glass on the floor rattle and sparks of magic dance between them. 
 # IMAGE: images/altar-73.jpg
 You lift the mask from the altar, the delicate features of the face reflecting your own stern visage.
 
->>+ You now have the <b>brass burial mask</b>.
+[info font=system side=accent]You now have the <b>brass burial mask</b>.[/info]
 ~ BMK = true
 
 -> cathedral_opts

@@ -32,7 +32,7 @@ The doors are open ever so slightly, allowing you to slip through and enter the 
 # CLEAR
 # IMAGE: images/mausoleums-48.jpg
 
-Wandering the gray, windswept castle grounds, you come across a small graveyard nestled in the shadow of the great stone bridge that looms above you. Toppled and cracked headstones lie face down in the dirt forming a cobblestonelike path toward [red]three mausoleums[/red] that stand among the overgrown roots and weeds.
+Wandering the gray, windswept castle grounds, you come across a small graveyard nestled in the shadow of the great stone bridge that looms above you. Toppled and cracked headstones lie face down in the dirt forming a cobblestonelike path toward [highlight]three mausoleums[/highlight] that stand among the overgrown roots and weeds.
 
 A sign creaks in the wind. The runes etched onto its surface tell that those interred in this honored graveyard perished while protecting others from the ravenous Carnophage.
 
@@ -50,7 +50,7 @@ The door of this decrepit mausoleum has been pried open, the bent hinges pulled 
 Peering inside, a skeleton reclines on a marble slab, its bones still encased in a suit of rusted plate mail. It clutches a battered two-handed sword in ancient gauntlets, the blade so dull it would struggle to cut parchment. Whatever other relics this warrior was interred with have long since been plundered.
 
 # IMAGE: images/shape-pillar.png
-A threadbare tapestry hangs on the mausoleum wall behind the slab. A crude symbol — [red]three lines in the shape of a pillar[/red] — is inked onto the tapestry.
+A threadbare tapestry hangs on the mausoleum wall behind the slab. A crude symbol — [highlight]three lines in the shape of a pillar[/highlight] — is inked onto the tapestry.
 
 + [Inspect the other mausoleums] -> mausoleums
 
@@ -62,7 +62,7 @@ The door of this decrepit mausoleum is sealed with heavy stone and bands of rive
 A threadbare tapestry dangles from a pole that stands next to the door, the fabric billowing in the cold air that whips through this cemetery in the shadow of the great bridge above.
 
 # IMAGE: images/shape-cross.png
-The image of a woman in flowing priestess robes has been embroidered onto the tapestry. A nimbus glows above her head and her delicately rendered hands clutch a holy symbol — [red]three lines in the shape of a cross[/red].
+The image of a woman in flowing priestess robes has been embroidered onto the tapestry. A nimbus glows above her head and her delicately rendered hands clutch a holy symbol — [highlight]three lines in the shape of a cross[/highlight].
 
 + [Inspect the other mausoleums] -> mausoleums
 
@@ -74,7 +74,7 @@ The door of this decrepit mausoleum is sealed with heavy stone and bands of rive
 Peering through a crack in the side of the mausoleum, you can barely make out a robed skeleton resting atop a slab. Talismans and bracelets dangle from the interred sorceress’s feeble bones. Moldy tomes lie stacked on the floor, their pages swollen and rotted with moisture.
 
 # IMAGE: images/shape-bonfire.png
-A threadbare tapestry hangs on the mausoleum wall behind the slab. A crude symbol — [red]three lines in the shape of a bonfire[/red] — is inked onto the tapestry.
+A threadbare tapestry hangs on the mausoleum wall behind the slab. A crude symbol — [highlight]three lines in the shape of a bonfire[/highlight] — is inked onto the tapestry.
 
 + [Inspect the other mausoleums] -> mausoleums
 
@@ -82,7 +82,7 @@ A threadbare tapestry hangs on the mausoleum wall behind the slab. A crude symbo
 
 A ghostly gorgon in funeral garb wanders the cemetery, stopping occasionally in an attempt to prop up one of the toppled headstones. She lets out a quiet sob each time her ethereal fingers pass through the stone. The gorgon then turns to face you, her petrifying eyes hidden behind a dark funerary veil.
 
-“My devoted daughter,” the gorgon wails. “She is not buried here among the other honored dead. I cannot know peace until I find her resting place. So deep was her faith that, with her final breaths in this world, she [red]sang my prayer[/red].”
+“My devoted daughter,” the gorgon wails. “She is not buried here among the other honored dead. I cannot know peace until I find her resting place. So deep was her faith that, with her final breaths in this world, she [highlight]sang my prayer[/highlight].”
 
 She then turns her gaze away and continues to drift through this graveyard in the cold shadow of the colossal bridge.
 

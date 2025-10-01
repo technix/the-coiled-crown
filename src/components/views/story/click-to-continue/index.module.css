@@ -1,0 +1,62 @@
+@keyframes circle {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.container {
+    position: relative;
+    height: 3em;
+    max-height: 3em;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--fg-color);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+  
+.circle:before,
+.circle:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: solid 3px var(--fg-color);
+    border-radius: 50%;
+}
+  
+.circle:before {
+    animation: ripple 4s linear infinite;
+}
+  
+.circle:after {
+    animation: ripple 2s linear infinite;
+}
+
+.circle_empty {
+    background-color: inherit;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

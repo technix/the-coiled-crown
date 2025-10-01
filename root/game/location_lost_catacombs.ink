@@ -20,14 +20,14 @@ A piercing pain and a damp warmth shoots through your neck. Groping with your fi
 + {PTN} [Drink the healing potion]
     You fumble in the dark for your healing potion and drink it, the wound in your neck sealing up in an instant.
     You hear another skull fall to the ground, and another, and still another until the darkness around you is filled with the sound of shattering bone and shooting arrows.
-        >>- You no longer have the <b>healing potion</b>.
+    [info font=system side=highlight]You no longer have the <b>healing potion</b>.[/info]
     ~ PTN = false
     + + [Sprint back to the catacombs entrance] -> location_lost_catacombs
 + {not PTN} [Try to pull the arrow]
     # AUDIOLOOP: music/death.mp3
     You try to pull the arrow, but your strength gives out and you tumble into a pile of shifting skeletons.
     You hear another skull fall to the ground, and another, and still another until the darkness around you is filled with the sound of shattering bone and shooting arrows.
-    >>! YOU DIED
+    [banner]YOU DIED[/banner]
     -> endgame
 
 = catacombs_witch
@@ -40,13 +40,13 @@ Her gaze is cast downward, her painted fingers smudging wax across the skull of 
     You pull the scroll from the mound of ashes and unfurl it.
     When your eyes adjust to the dim light of the witch’s hovel, you can read that the scroll is a hymn of mending.
     “Please, take it,” the witch hums. “With that forgotten hymn, you can restore that which has fallen to ruin in this dead world. I have no need for such magic — I am quite comfortable here in the rubble.”
-    >>+ You now have the <b>hymn of mending</b>.
+    [info font=system side=accent]You now have the <b>hymn of mending</b>.[/info]
     ~ HMD = true
 + {WFG} [Give witch a wax figurine]
     The witch looks up, breathes deep of the air, and smiles. She takes the phoenix figurine from you and tosses it into a hissing kettle at her feet. The wax figurine melts into a viscous substance that she mixes with flower petals and bits of bone.    
     “Sip this.” She pours the elixir into a wooden bowl and motions it toward you. You press the bowl to your lips and drink the pungent, chalky liquid. Whispering fills the air. “With this concoction, you may commune with the restless spirits that wander this haunted keep.”    
-    >>+ You have drunk the <b>séance elixir</b>.
-    >>- You no longer have the <b>wax figurine</b>.
+    [info font=system side=accent]You have drunk the <b>séance elixir</b>.[/info]
+    [info font=system side=highlight]You no longer have the <b>wax figurine</b>.[/info]
     ~ ELX = true
     ~ WFG = false
 + [Leave the witch be and go back to the lift] -> location_lift

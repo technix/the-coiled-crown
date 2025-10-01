@@ -12,7 +12,7 @@ VAR BIR = false // blessing of iron
 VAR BFR = false // blessing of fire
 
 === function player_toolbar()
-    [button onclick=player_inventory bordered=false][img]images/inventory.png[/img][/button]
+    [button onclick=player_inventory bordered=false display=modal][img]images/inventory.png[/img][/button]
 
 === function player_inventory()
     [title]Inventory[/title]

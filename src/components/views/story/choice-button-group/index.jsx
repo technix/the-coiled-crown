@@ -1,7 +1,10 @@
 import { h } from 'preact';
-import { useState, useCallback, useEffect } from 'preact/hooks';
-import useAtrament from 'src/atrament/hooks';
+import clsx from 'clsx';
+import { useState, useCallback } from 'preact/hooks';
+import { useAtrament } from 'src/atrament/hooks';
+import { useKeyboardHandler } from 'src/hooks';
 import ChoiceButton from '../choice-button';
+import style from './index.module.css';
 
 const ChoiceButtonGroup = ({ key, currentScene, setReady }) => {
   const { makeChoice, continueStory } = useAtrament();
@@ -36,27 +39,25 @@ const ChoiceButtonGroup = ({ key, currentScene, setReady }) => {
       kbdChoice <= numberOfChoices &&
       !currentScene.choices[kbdChoice-1].disabled
     ) {
-      selectChoice(kbdChoice - 1);
+      selectChoice(currentScene.choices[kbdChoice-1].id);
     }
   }, [ numberOfChoices, selectChoice, currentScene.choices ]);
 
-  useEffect(() => {
-    document.addEventListener("keydown", kbdChoiceHandler, false);
-    return () => {
-      document.removeEventListener("keydown", kbdChoiceHandler, false);
-    }
-  }, [ kbdChoiceHandler ]);
+  useKeyboardHandler(kbdChoiceHandler);
 
   return (
     <>
-      {currentScene.choices.map((choice, index) => (
-        <ChoiceButton
-          key={`${key}-${index}`}
-          choice={choice}
-          chosen={chosen}
-          handleClick={selectChoice}
-        />))
-      }
+      {currentScene.tags?.PROMPT && <div class={clsx(style.choice_prompt, 'atrament-prompt')}>{currentScene.tags.PROMPT}</div>}
+      <div>
+        {currentScene.choices.map((choice, index) => (
+          <ChoiceButton
+            key={`${key}-${index}`}
+            choice={choice}
+            chosen={chosen}
+            handleClick={selectChoice}
+          />))
+        }
+      </div>
     </>
   ) 
 };

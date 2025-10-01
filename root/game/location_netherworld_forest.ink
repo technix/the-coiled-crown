@@ -14,7 +14,7 @@ A path of well-trodden dirt winds into the distance.
 - (opts1)
 
 * [Check your equipment]
-    You are carrying a longsword and an [red]empty potion vial[/red] that was once filled with healing liquid.
+    You are carrying a longsword and an [highlight]empty potion vial[/highlight] that was once filled with healing liquid.
     Your cloak and leather armor are a little worse for wear, but you are otherwise unharmed.
     -> opts1
 + [Follow the path through the fog]
@@ -32,7 +32,7 @@ In total, you spot more than two dozen ghosts amid the trees. None notice you, a
 * {not WFG} [Take wax figurine]
     You pick up the wax figurine and inspect it. It’s carved in the likeness of a phoenix. Holding it close to your face, it smells faintly of soap.
     
-    >>+ You now have the <b>wax figurine</b>.
+    [info font=system side=accent]You now have the <b>wax figurine</b>.[/info]
     ~ WFG = true
     -> opts2
 + {WFG} [Continue on the path through the fog]

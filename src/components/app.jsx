@@ -1,64 +1,54 @@
 import { h } from 'preact';
-import { useCallback, useEffect, useState } from 'preact/hooks';
-import { Router } from 'preact-router';
-import { createMemoryHistory } from 'history';
+import { useEffect, useState } from 'preact/hooks';
 import { TranslationsProvider } from '@eo-locale/preact';
-
-import AtramentContext from 'src/atrament/context';
+import { AtramentContext } from 'src/context';
 import atramentInit from 'src/atrament/init';
-
-import ApplicationWrapper from 'src/components/ui/application-wrapper';
-import Loading from 'src/components/ui/loading';
-import HomeRoute from 'src/components/routes/home';
-import GameRoute from 'src/components/routes/game';
-import AboutRoute from 'src/components/routes/about';
-
-import locales from 'src/i18n.json';
+import locales from 'src/locales';
 import { appLanguage } from 'src/constants';
 
-let atrament;
+import ApplicationWrapper from 'src/components/ui/application-wrapper';
+import ErrorModal from 'src/components/ui/error-modal';
+import Container from 'src/components/ui/container';
+import Loading from 'src/components/ui/loading';
+import AppRouter from './router';
 
 function App() {
-  const [ loaded, isLoaded ] = useState(false);
+  const [ atrament, setAtrament ] = useState(null);
+  const [ initError, setInitError ] = useState(null);
 
   useEffect(() => {
     const startEngine = async () => {
-      const atramentLib = await import(/* webpackChunkName: "atrament" */ "@atrament/web");
-      atrament = atramentLib.default;
+      const { default: atrament } = await import("@atrament/web");
       // import inkjs
-      const { Story } = await import(/* webpackChunkName: "inkjs" */ "inkjs");
+      const { Story } = await import("inkjs");
       // initialize engine
-      await atramentInit(atrament, Story);
-      // done
-      isLoaded(true);
+      try {
+        await atramentInit(atrament, Story);
+        // done
+        setAtrament(atrament);
+      } catch (e) {
+        console.error(e);
+        setInitError(e.message);
+      }
     };
     // application is ready
     startEngine();
   }, []);
 
-  const handleRoute = useCallback((route) => {
-    if (route.url === '/' && route.previous) {
-      // back from game screen
-      atrament.game.clear();
-    }
-  }, []);
-
-  if (loaded) {
-    return (
-      <TranslationsProvider language={appLanguage} locales={locales}>
-        <AtramentContext.Provider value={atrament}>
-          <ApplicationWrapper>
-            <Router history={createMemoryHistory()} onChange={handleRoute}>
-              <HomeRoute path="/" />
-              <GameRoute path="/game" />
-              <AboutRoute path="/about" />
-            </Router>
-          </ApplicationWrapper>
-        </AtramentContext.Provider>
-      </TranslationsProvider>
-    );
-  }
-  return (<ApplicationWrapper><Loading /></ApplicationWrapper>);
+  return (
+    <TranslationsProvider language={appLanguage} locales={locales}>
+      <AtramentContext.Provider value={atrament}>
+        <ApplicationWrapper>
+          {atrament
+            ? <AppRouter />
+            : initError
+              ? <Container><ErrorModal message={initError} /></Container>
+              : <Loading />
+          }
+        </ApplicationWrapper>
+      </AtramentContext.Provider>
+    </TranslationsProvider>
+  );
 }
 
 export default App;

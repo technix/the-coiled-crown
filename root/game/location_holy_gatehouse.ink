@@ -49,13 +49,13 @@ Through fits of painful coughing and choking, you fall to the ground, the paladi
 
 + {PTN} [Drink the healing potion]
     You feel for the healing potion at your side and drink it, the chalky fluid soothing your burning insides. Still on your back, you wipe tears from your swollen eyes.
-    >>- You no longer have the <b>healing potion</b>.
+    [info font=system side=highlight]You no longer have the <b>healing potion</b>.[/info]
     ~ PTN = false
     + + [Move away from statue] -> gatehouse_entrance
 + {not PTN} [Try to breathe]
     # AUDIOLOOP: music/death.mp3
     You hear quiet sobbing from within the hollow breastplate of the statue.
-    >>! YOU DIED
+    [banner]YOU DIED[/banner]
     -> endgame
 
 = say_lead
@@ -67,7 +67,7 @@ Clanging gears rattle within the statue, followed by a cloud of dust that issues
 You stand from the kneeling stone and peer inside the helmet to see a dimly glowing chunk of everburning coal. 
 {not EBC:
     Feeling expectant eyes upon you, you grab the coal with gloved hands, the warmth comforting.
-    >>+ You now have the <b>everburning coal</b>.
+    [info font=system side=accent]You now have the <b>everburning coal</b>.[/info]
     ~ EBC = true
 }
 + [Move away from statue] -> gatehouse_entrance
@@ -95,7 +95,7 @@ You try to speak the other names you’ve heard on your journey, but to no avail
 -
 # AUDIOLOOP: music/death.mp3
 Hours turn to days and days turn to weeks, until finally you collapse from hunger, dirty fingers scratching at the sealed brass door.
->>! YOU DIED
+[banner]YOU DIED[/banner]
 -> endgame
 
 = p50

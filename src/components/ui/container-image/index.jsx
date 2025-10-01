@@ -1,13 +1,27 @@
 import { h } from 'preact';
+import clsx from 'clsx';
 import style from './index.module.css';
 
-const ContainerImage = ({ src }) => (
-  src ?
-    <div class={[style.imagebox, 'atrament-image-container'].join(' ')}>
-      <img src={src} class={[style.image, 'atrament-image'].join(' ')} />
-    </div>
-    :
-    ''
+const ContainerImage = ({ src, options = {} }) => (
+  <div
+    class={clsx(style.imagebox, 'atrament-image-container')}
+    style={{
+      'margin-left': options['leftmargin'] || 'none',
+      'margin-right': options['rightmargin'] || 'none'
+    }}
+  >
+    <img
+      src={src}
+      style={{
+        width: options.width || 'auto',
+      }}
+      class={clsx(
+        style.image,
+        !options.fullsize && style.illustration,
+        'atrament-image'
+      )}
+    />
+  </div>
 );
 
 export default ContainerImage;

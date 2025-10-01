@@ -1,33 +1,21 @@
 import { h } from 'preact';
-import { useTranslator } from '@eo-locale/preact';
-import { useState } from 'preact/hooks';
+import clsx from 'clsx';
 import style from './index.module.css';
-
-import useAtrament from 'src/atrament/hooks';
-import markup from 'src/atrament/markup';
+import { useTranslator } from '@eo-locale/preact';
+import { useAtramentState } from 'src/atrament/hooks';
+import Markup from 'src/components/ui/markup';
+import { TOOLBAR_STORE_KEY, TOOLBAR_DEFAULT } from 'src/constants';
 
 const Toolbar = () => {
   const translator = useTranslator();
-  const { atrament, state } = useAtrament();
-  const [ hasError, setError ] = useState(false);
-
-  let toolbarContent = state.metadata.title || translator.translate('default.title');
-  if (state.metadata.toolbar && !hasError) {
-    try {
-      const result = atrament.ink.evaluateFunction(state.metadata.toolbar, [], true);
-      if (result.output) {
-        toolbarContent = result.output;
-      }
-    } catch (e) {
-      atrament.ink.story().onError(e.toString());
-      setError(true);
-    }
-  }
-  const transformedToolbarContent = markup(toolbarContent);
+  const atramentState = useAtramentState([TOOLBAR_STORE_KEY]);
+  const toolbarContent = atramentState[TOOLBAR_STORE_KEY] !== TOOLBAR_DEFAULT
+    ? atramentState[TOOLBAR_STORE_KEY]
+    : translator.translate('default.title');
 
   return (
-    <div class={[style.toolbar, 'atrament-toolbar'].join(' ')}>
-      {transformedToolbarContent}
+    <div class={clsx(style.toolbar, 'atrament-toolbar')}>
+      <Markup content={toolbarContent} />
     </div>
   )
 };

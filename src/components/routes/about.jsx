@@ -1,42 +1,43 @@
 import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import { route } from 'preact-router';
 import { Text } from '@eo-locale/preact';
 
-import useAtrament from 'src/atrament/hooks';
+import { useAtrament, useAtramentState } from 'src/atrament/hooks';
 
-import Settings from 'src/components/settings';
+import Menu from 'src/components/menu';
 
-import Block from '../ui/block';
-import Container from '../ui/container';
-import ContainerText from '../ui/container-text';
-import ContainerFlex from '../ui/container-flex';
-import LinkMenu from '../ui/link-menu';
+import Markup from 'src/components/ui/markup';
+import Block from 'src/components/ui/block';
+import TextParagraph from 'src/components/ui/text-paragraph';
+import Container from 'src/components/ui/container';
+import ContainerText from 'src/components/ui/container-text';
+import ContainerFlex from 'src/components/ui/container-flex';
+import LinkMenu from 'src/components/ui/link-menu';
 
 const AboutRoute = () => {
-  const { state } = useAtrament();
+  const { evaluateInkFunction } = useAtrament();
+  const { metadata } = useAtramentState(['metadata']);
+  const [ aboutContent, setAboutContent ] = useState(' ');
   const mainMenu = () => route('/');
-
+  
+  useEffect(() => {
+    const result = evaluateInkFunction(metadata.about);
+    if (result.output) {
+      setAboutContent(result.output);
+    } else {
+      setAboutContent(result.error);
+    }
+  }, [ metadata.about, setAboutContent, evaluateInkFunction ]);
   return (
     <Container>
-      <Settings />
-      <ContainerText fontSize={state.settings.fontSize}>
+      <Menu isHomeScreen />
+      <ContainerText>
         <ContainerFlex>
-          <div style='text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center'>
-            <h1>The Coiled Crown</h1>
-            <p>    
-              (c) 2021 <a href="https://tridentgamebooks.com/" target="_blank" rel="noreferrer">Trident Gamebooks, LLC</a>. All rights reserved.
-              Gamebook text used with permission.
-            </p>
-            <p>
-              The gamebook is adapted for <a href="https://www.inklestudios.com/ink/" target="_blank" rel="noreferrer">Ink</a> and <a href="https://github.com/technix/atrament-core" target="_blank" rel="noreferrer">Atrament</a> by <a href="https://technix.in.ua/" target="_blank" rel="noreferrer">Serhii "techniX" Mozhaiskyi</a>.
-            </p>
-            <p>
-              Music by <a href="https://n91music.itch.io/" target="_blank" rel="noreferrer">N91Music</a>.
-            </p>
-            <p>
-              <img src="game/written-in-ink.png" style="width: 30%; padding: 1rem" /> 
-            </p> 
-          </div>
+          <Block> </Block>
+          <Block>
+            {aboutContent.split("\n").map((item) => <TextParagraph key={item}><Markup isActive content={item} /></TextParagraph>)}
+          </Block>
         </ContainerFlex>
         <Block>
           <LinkMenu key="mainmenu" onClick={mainMenu}><Text id={'main.menu'} /></LinkMenu>

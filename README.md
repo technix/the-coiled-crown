@@ -4,7 +4,7 @@
 
 ## About
 
-This game is made with Atrament framework. Web application is made using `atrament-preact-ui` and has the following features:
+This game is made with Atrament framework. Web application is made using `@atrament/web-ui` and has the following features:
 
 - can be installed as a PWA (progressive web application)
 - music and images
@@ -12,10 +12,7 @@ This game is made with Atrament framework. Web application is made using `atrame
 - mute music when tab is inactive
 - configurable themes, fonts and sizes
 
-These features were added for the game:
-
-- game theme
-- text output customizations
+Custom color theme was added for the game.
 
 ## Run game locally
 
@@ -31,9 +28,9 @@ The application is available at `http://localhost:8900`
 
 See these GitHub repositories:
 
-- [atrament-preact-ui](https://github.com/technix/atrament-preact-ui)
-- [atrament-web](https://github.com/technix/atrament-web)
-- [atrament-core](https://github.com/technix/atrament-core)
+- [@atrament/web-ui](https://github.com/technix/atrament-web-ui)
+- [@atrament/web](https://github.com/technix/atrament-web)
+- [@atrament/core](https://github.com/technix/atrament-core)
 
 ## LICENSE
 

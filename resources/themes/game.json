@@ -1,0 +1,13 @@
+{
+  "name": "game",
+  "theme": {
+    "bg-color": "#EBCFB2",
+    "fg-color": "#424B54",
+    "shade-color": "rgba(0, 0, 0, 0.1)",
+    "font-color": "#333333",
+    "accent-bg-color": "#EBCFB2",
+    "accent-fg-color": "#AD1C2A",
+    "border-radius": "0.5rem",
+    "border-radius-inline": "0.25rem"
+  }
+}

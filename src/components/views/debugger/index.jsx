@@ -1,0 +1,59 @@
+import { h } from 'preact';
+import { useCallback, useState } from 'preact/hooks';
+import { useTranslator } from '@eo-locale/preact';
+import style from './index.module.css';
+
+import { useAtramentState } from 'src/atrament/hooks';
+import { useKeyboardHandler, useToggle } from 'src/hooks';
+import CloseButton from 'src/components/ui/close-button';
+import { IconDebugger } from 'src/components/ui/icons';
+
+import DebugInfo from './info';
+import DebugGoto from './goto';
+import DebugGlobaltags from './globaltags';
+import DebugVariables from './variables';
+import DebugVisits from './visits';
+import DebugFunctions from './functions';
+
+const DebuggerView = () => {
+  const [ isOpen, toggleDebugger ] = useToggle(false);
+  const [ keyWait, setKeyWait ] = useState(false);
+  const translator = useTranslator();
+
+  const debugHandler = useCallback((e) => {
+    if (e.code === 'Backquote') {
+      if (keyWait) {
+        toggleDebugger();
+        setKeyWait(false);
+      } else {
+        setKeyWait(true);
+        setTimeout(() => setKeyWait(false), 1000);
+      }
+    }
+  }, [ toggleDebugger, keyWait, setKeyWait ]);
+
+  useKeyboardHandler(debugHandler);
+
+  if (!isOpen) {
+    return (<button class={style.debug_toggle} onClick={toggleDebugger} title={translator.translate('debug')}><IconDebugger /></button>);
+  }
+
+  return (
+    <div class={style.debug_container}>
+      <CloseButton onClick={toggleDebugger} />
+      <DebugInfo />
+      <DebugGlobaltags />
+      <DebugVariables />
+      <DebugVisits />
+      <DebugFunctions />
+      <DebugGoto closeFn={toggleDebugger} />
+    </div>
+  );
+}
+
+const DebuggerMenu = () => {
+  const { metadata } = useAtramentState(['metadata']);
+  return metadata.debug ? <DebuggerView /> : <></>;
+}
+
+export default DebuggerMenu;

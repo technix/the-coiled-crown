@@ -30,7 +30,7 @@ Peering up toward the deepening violet sky, you see handholds carved into the ro
 
 You climb down the side of the cliff, dirt and oily slime collecting underneath your fingernails. The evergreen trees now loom over you, silent.
 
-Another narrow dirt path leads into the fog ahead of you, this time splitting into a number of forks that stretch off in all directions. It looks easy to get [red]lost[/red] down here.
+Another narrow dirt path leads into the fog ahead of you, this time splitting into a number of forks that stretch off in all directions. It looks easy to get [highlight]lost[/highlight] down here.
 
 + [Continue into the evergreen forest] -> death_lost_in_the_woods
 + {BMP} [Follow the markings on a burnt map] -> follow_burnt_map
@@ -44,7 +44,7 @@ You wander through the fog-draped forest and quickly become lost. As the sun set
 -
 # AUDIOLOOP: music/death.mp3
 You pull your hooded cloak tight and curl up against a fallen tree trunk, teeth chattering. With no moon, you cannot even see the clouds of your last breaths or the reddening of your frostbitten skin before you drift into a numb sleep.
->>! YOU DIED
+[banner]YOU DIED[/banner]
 -> endgame
 
 = follow_burnt_map

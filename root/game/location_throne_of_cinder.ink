@@ -42,7 +42,7 @@ You feel that you are surrounded here in the dark.
     You flail in an attempt to drive away the horde.
     Kaldera approaches you in your agony from the darkness, kneels down, and whispers to you:
     “Oh, to have journeyed so far, only to fall so close to what you sought.”
-    >>! YOU DIED
+    [banner]YOU DIED[/banner]
     -> endgame
 
 = throne_hit
@@ -58,7 +58,7 @@ With an otherworldly shriek, she hurls her fiery spear at you with supernatural 
     You fall to your knees and watch as your cloak, leather armor, and flesh peel away like parchment thrown into a bonfire.
     Kaldera approaches you in your agony, kneels down, and whispers to you:
     “Oh, to have journeyed so far, only to fall so close to what you sought.”
-    >>! YOU DIED
+    [banner]YOU DIED[/banner]
     -> endgame
 
 = claim_the_crown
@@ -67,7 +67,7 @@ With an otherworldly shriek, she hurls her fiery spear at you with supernatural 
 # IMAGE: images/soot-104.jpg
 You approach Kaldera with your longsword at the ready. Drawing close, she reaches up at you with lanky arms in a feeble attempt to strike you. With a shout that reverberates through the entire Scorched Keep and the forest beyond, you plunge your blade into Kaldera’s inky undead form. She lets out a hoarse cry before her body runs like molten tar down the steps leading to her empty throne.
 
-You kneel down and pull the [red]Coiled Crown[/red] from the puddle of boiling sludge, long strands of tar dripping from the tangle of brass snakes and polished gems and sticking to your hands. At long last, you have claimed what you have come for. <b>And now, there is one final decision you must make</b>.
+You kneel down and pull the [highlight]Coiled Crown[/highlight] from the puddle of boiling sludge, long strands of tar dripping from the tangle of brass snakes and polished gems and sticking to your hands. At long last, you have claimed what you have come for. <b>And now, there is one final decision you must make</b>.
 
 + [Leave this world] -> finale_1
 + [Remain in this world] -> finale_2
@@ -77,7 +77,7 @@ You kneel down and pull the [red]Coiled Crown[/red] from the puddle of boiling s
 # IMAGE: images/leave-105.jpg
 Coiled Crown in hand, you turn away from the seeping tar-like remains of Kaldera and march toward an enormous glowing door at the head of this sprawling cavern. Blinding light glows through the seams. You tighten your grip on the Crown and, in a triumphant voice, shout for the portal to open back to your own world.
 You have no desire to rule, to enmesh yourself in the petty squabbles of heirs, of courtiers, of merchants. You have no taste for the raising of monuments or the waging of war. You simply desire to be left alone, to indulge in your own appetites; and with the gold you’ll fetch for the crown you’ve claimed, a life of luxurious solitude awaits you back in the mortal realm.
->>@ VICTORY ACHIEVED
+[banner style=accent]VICTORY ACHIEVED[/banner]
 -> END
 
 = finale_2
@@ -85,5 +85,5 @@ You have no desire to rule, to enmesh yourself in the petty squabbles of heirs, 
 # IMAGE: images/stay-106.jpg
 Coiled Crown in hand, you turn away from the seeping tar-like remains of Kaldera and march toward the throne of volcanic glass that sits at the head of this sprawling cavern. You let out an exhausted sigh and drop onto the throne. Looking around, you see in the gloom statues of a regal woman, a fierce but fair ruler to her people that adored her so. Never in your past life did you command such attention, such respect, such love. 
 With trembling fingers you place the mythic crown atop your head. Strangely, it is a perfect fit, as if fate had brought you to this throne, as if you were destined to breathe fire back into this dark world and raise its faithful people to glory once more.
->>@ VICTORY ACHIEVED
+[banner style=accent]VICTORY ACHIEVED[/banner]
 -> END

@@ -1,4 +1,5 @@
 import { h, Fragment } from 'preact';
+import clsx from 'clsx';
 import style from './index.module.css';
 import { useRef, useState, useEffect, useCallback } from 'preact/hooks';
 import { scrollIntoView } from "seamless-scroll-polyfill";
@@ -6,10 +7,12 @@ import { scrollIntoView } from "seamless-scroll-polyfill";
 import ContainerImage from 'src/components/ui/container-image';
 import Paragraph from '../scene-paragraph';
 // utils
+import { useAtrament } from 'src/atrament/hooks';
 import preloadImages from 'src/utils/preload-images';
-import { getAssetPath } from "src/utils/get-asset-path";
+import CircleLoader from 'src/components/ui/animation-circles';
 
 const Scene = ({ scene, isCurrent, isSingle, readyHandler }) => {
+  const { getAssetPath } = useAtrament();
   const [ isLoaded, setIsLoaded ] = useState(false);
   const elementRef = useRef(null);
 
@@ -38,20 +41,22 @@ const Scene = ({ scene, isCurrent, isSingle, readyHandler }) => {
       setIsLoaded(true);
     }
     preloader();
-  }, [ scene, setIsLoaded ]);
+  }, [ scene, setIsLoaded, getAssetPath ]);
 
   return (
-    <div class={[style.scene, 'atrament-scene', isCurrent && isLoaded ? 'animation_appear' : ''].join(' ')} ref={elementRef}>
-      <div style={{ opacity: isLoaded ? 1 : 0 }}>
-        {
-          scene.content.map((item, i) => (
-            <Fragment key={`paragraph-${scene.uuid}-${i}`}>
-              {item.image && <ContainerImage src={getAssetPath(item.image)} /> }
-              <Paragraph isCurrent={isCurrent} content={item.text} />
-            </Fragment>
-          ))
-        }
-      </div>
+    <div class={clsx(style.scene, 'atrament-scene', (isCurrent && isLoaded) && 'animation_appear')} ref={elementRef}>
+      { isLoaded ? 
+        scene.content.map((item, i) => (
+          <Fragment key={`paragraph-${scene.uuid}-${i}`}>
+            {item.images.map(
+              (img, i) => <ContainerImage key={`${i}-${img}`} src={getAssetPath(img)} />
+            )}
+            <Paragraph isCurrent={isCurrent} content={item} />
+          </Fragment>
+        ))
+        :
+        <CircleLoader />
+      }
     </div>
   )
 };

@@ -30,8 +30,8 @@ You climb into the rowboat as gingerly as you can manage. The swollen wooden pla
 # AUDIOLOOP: music/death.mp3
 For a moment, you feel steady. Suddenly, the wooden boat buckles and splinters beneath your boots and you plunge into the dark, dirty water.
 As if dragged down by supernatural iron weights, you sink deeper into the frigid water of the cistern, the dim torchlight above slowly fading to an all-encompassing darkness.
->>> Your <b>blessing of iron</b> weighed you down.
->>! YOU DIED
+[info font=system]Your <b>blessing of iron</b> weighed you down.[/info]
+[banner]YOU DIED[/banner]
 -> endgame
 
 = p53
@@ -40,7 +40,7 @@ As if dragged down by supernatural iron weights, you sink deeper into the frigid
 You manage to steady the vessel. Two cracked oars lie underneath the boat’s bench, which you pull from the grime and dip into the water.
 After rowing for a few minutes, you come to a large reservoir at the end of the maze-like cistern filled with sediment and slimes of various sickening colors.
 The mottled remains of a squid-like creature decompose in the corner of the reservoir, tiny grubs eating at the rubbery flesh that shimmers in the dim torchlight.
-You feel a [red]chilling presence[/red].
+You feel a [highlight]chilling presence[/highlight].
 
 + {ELX} [Watch the ghosts] -> cursed_gateway_ghosts
 + [Row back to the cistern] -> location_cursed_gateway
@@ -48,7 +48,7 @@ You feel a [red]chilling presence[/red].
 = cursed_gateway_ghosts
 
 A phantasmal woman hovers here, her eyes darkened by tears that drip into the murky water beneath her feet. A pile of slain ethereal knights surround her — each has their helmet removed to reveal sucking squid-like creatures covering their faces.
-A ghostly young girl sits in the shallow water near the phantasmal woman. She bundles together colorless phantom flowers taken from the [red]garlands atop her head[/red] and sets them afloat on the cistern’s current.
+A ghostly young girl sits in the shallow water near the phantasmal woman. She bundles together colorless phantom flowers taken from the [highlight]garlands atop her head[/highlight] and sets them afloat on the cistern’s current.
 
 + [Row back to the cistern] -> location_cursed_gateway
 
@@ -56,7 +56,7 @@ A ghostly young girl sits in the shallow water near the phantasmal woman. She bu
 = portcullis
 # IMAGE: images/candles-16.jpg
 A pair of brass sarcophagi recline in this damp tomb hidden beneath the Scorched Keep. Wet, muddy hand prints cover both sarcophagi, as if some frail creature had slithered from the cistern and tried to lift open the heavy cover plates.
-Both sarcophagi are identical, except for the coiled patterns painted onto the cover plates: [red]black paint[/red] applied to the sarcophagus on the left, [red]white paint[/red] on the right.
+Both sarcophagi are identical, except for the coiled patterns painted onto the cover plates: [highlight]black paint[/highlight] applied to the sarcophagus on the left, [highlight]white paint[/highlight] on the right.
 Bouquets of dead flower stems float in the ankle-high water at the foot of each sarcophagus, the color of the ribbons binding the stems matching the color used to paint the sarcophagi.
 
 - (opts_portcullis)
@@ -67,9 +67,9 @@ Bouquets of dead flower stems float in the ankle-high water at the foot of each 
 
 - (take_flowers)
 You collect the bundles of dead flower stems from the murky puddles of water that lap at the base of each sarcophagus.
->>+ You now have a <b>bouquet of dead flower stems bound in black ribbon</b>.
+[info font=system side=accent]You now have a <b>bouquet of dead flower stems bound in black ribbon</b>.[/info]
 ~ FLB = true
->>+ You now have a <b>bouquet of dead flower stems bound in white ribbon</b>.
+[info font=system side=accent]You now have a <b>bouquet of dead flower stems bound in white ribbon</b>.[/info]
 ~ FLW = true
 -> opts_portcullis
 
@@ -82,7 +82,7 @@ A numbing cold spreads through your body and you fall to your knees.
     # IMAGE: images/water-42.jpg
     Quickly, you pull the healing potion from your pack and drink the chalky fluid. The numbness and chills subside and you stagger to your feet.
     Just as you recover your balance against the slimy walls, the ground beneath your feet gives way. Both sarcophagi tumble into a deep pool of pitch-black water — and if you don’t move quickly, you will as well.
-    >>- You no longer have the <b>healing potion</b>.
+    [info font=system side=highlight]You no longer have the <b>healing potion</b>.[/info]
     ~ PTN = false
     The sarcophagi have sunk into the cistern [SNK].
     ~ SNK = true
@@ -90,7 +90,7 @@ A numbing cold spreads through your body and you fall to your knees.
 + {not PTN} [Try to get away]
     # AUDIOLOOP: music/death.mp3
     The last thing you hear before you lose consciousness is the soft brushing of the dead bouquets beneath your body and the ceaseless dripping of water into the cistern behind you.
-    >>! YOU DIED
+    [banner]YOU DIED[/banner]
     -> endgame
 
 - (sarcophagus_white)
@@ -101,7 +101,7 @@ With a groan, you throw open the sarcophagus painted with flowering white lines.
 You see inside the tomb a cage-like effigy of a woman made from brass wire, its interior stuffed with dessicated lilac petals. You reach into the sarcophagus, the stiff petals crumbling from your touch. A gentle voice fills your mind:
 “Euryale’s prayer is the key to the Throne of Cinder and the Coiled Crown you seek.”
 
->>+ You have received the <b>revelation of Kaldera</b>.
+[info font=system side=accent]You have received the <b>revelation of Kaldera</b>.[/info]
 ~ RVK = true
 
 + [Return to the cistern] -> location_cursed_gateway

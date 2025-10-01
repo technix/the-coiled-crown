@@ -1,0 +1,18 @@
+.collapse {
+  border-radius: var(--border-radius-inline);
+  border: 3px solid var(--shade-color);
+}
+
+.collapse_title {
+  cursor: pointer;
+  background-color: var(--shade-color);
+  padding: 0.5em;
+}
+
+.collapse_children {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  overflow: auto;
+}

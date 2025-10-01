@@ -40,7 +40,7 @@ The obsidian skull lets out a groan like metal buckling under the weight of ston
 You lash out at the enormous skull, the echoing of your shout drawing the sound of scuffling footsteps from behind you. Turning your head, you can see the fortune teller, draped in flowering wreaths, peeking out at you from behind a pillar.
 Your blade shatters when it strikes the obsidian skull, which coils outward from the door like a striking serpent. Before you can turn to flee or call to the fortune teller for help, the skull bites down on you and swallows your body whole.
 Darkness and the painful grinding of stone envelops you.
->>! YOU DIED
+[banner]YOU DIED[/banner]
 -> endgame
 
 
@@ -64,7 +64,7 @@ VAR tarot_death = false
 ~ tarot_death = false
 You approach the young woman sitting cross-legged on the cold limestone floor. She places her deck of tarot cards at her side and looks up at you.
 
-“Many of the [red]flowers[/red] in this forest can heal the sick,” she says, running her fingers along the garlands that cover her body.
+“Many of the [highlight]flowers[/highlight] in this forest can heal the sick,” she says, running her fingers along the garlands that cover her body.
 
 “The Carnophage came too quickly. The extinct people of this land had no time to learn how to use the blessings of the forest around them — a pity, really, as Gaea provides remedies for all ills, even those as dreadful as the Carnophage.”
 
@@ -99,7 +99,7 @@ Before you can turn the card to reveal its face, the card between your fingers e
 
 You shout and shake the ashes from your fingertips that still glow a dull red like embers. The fortune teller slides back in surprise and pulls the rest of her tarot cards close to her chest.
 
->>> Your <b>blessing of fire</b> incinerated the card.
+[info font=system]Your <b>blessing of fire</b> incinerated the card.[/info]
 -> fortune_teller_opts
 
 - (card_blessing_of_iron)
@@ -108,7 +108,7 @@ You flip the card to reveal its face. Looking down, you see that you have drawn 
 # IMAGE: images/tarot-high-priestess.jpg
 The fortune teller looks up at you with eyes of deep green and speaks.
 
-“I sense that a priestess of this land has gifted you with a divine blessing, seeker of the crown. I pray that you [red]trust in this blessing[/red] when you come to face the mortal danger that dwells in this haunted Keep.”
+“I sense that a priestess of this land has gifted you with a divine blessing, seeker of the crown. I pray that you [highlight]trust in this blessing[/highlight] when you come to face the mortal danger that dwells in this haunted Keep.”
 -> fortune_teller_opts
 
 - (card_tarot)
@@ -118,23 +118,23 @@ You flip the card to reveal its face. Looking down, you see that you have drawn 
 # IMAGE: images/tarot-death.jpg
 The fortune teller bites her lip and whispers without looking up from the card.
 
-“You are in grave danger, seeker of the crown. I sense there is something important you have left behind [red]outside the walls of this Keep[/red]. I pray that you find it, lest you join the wandering chorus of ghosts.”
+“You are in grave danger, seeker of the crown. I sense there is something important you have left behind [highlight]outside the walls of this Keep[/highlight]. I pray that you find it, lest you join the wandering chorus of ghosts.”
 -> fortune_teller_opts
 
 
 - (flowers_roses)
-You hand the fortune teller the bundle of dead flower stems bound with [red]black ribbon[/red].
+You hand the fortune teller the bundle of dead flower stems bound with [highlight]black ribbon[/highlight].
 
 She pulls the stems close to her face before smelling them, tasting them, and rolling them between her painted fingers. She holds the stems up into the dim light that shines down through the windows high above, her deep green eyes drinking in every detail.
 
-“[red]Roses[/red],” the fortune teller finally whispers. “These bare stems were once roses, red with the burning passion of those who loved their queen so dearly.”
+“[highlight]Roses[/highlight],” the fortune teller finally whispers. “These bare stems were once roses, red with the burning passion of those who loved their queen so dearly.”
 -> fortune_teller_opts
 
 
 - (flowers_lilacs)
-You hand the fortune teller the bundle of dead flower stems bound with [red]white ribbon[/red].
+You hand the fortune teller the bundle of dead flower stems bound with [highlight]white ribbon[/highlight].
 
 She pulls the stems close to her face before smelling them, tasting them, and rolling them between her painted fingers. She holds the stems up into the dim light that shines down through the windows high above, her deep green eyes drinking in every detail.
 
-“[red]Lilacs[/red],” the fortune teller finally whispers. “These bare stems were once lilacs, fragrant totems of eternal youth and renewal promised by the great queen that once ruled here.”
+“[highlight]Lilacs[/highlight],” the fortune teller finally whispers. “These bare stems were once lilacs, fragrant totems of eternal youth and renewal promised by the great queen that once ruled here.”
 -> fortune_teller_opts

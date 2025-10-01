@@ -31,13 +31,13 @@ An inscription is etched around her neck like a pendant. Tracing your fingers ov
 + {EBC} [Put everburning coal into the brazier]
     You toss the everburning coal into the brazier. Thick smoke billows from the glowing coals and forms into the shape of a coiled serpent with a woman’s face.
     
-    The smoky apparition hisses at you: “Sseek the ssinging ssister. Ssing her ssacred sscroll amid the [red]sstained and sshattered[/red].”
+    The smoky apparition hisses at you: “Sseek the ssinging ssister. Ssing her ssacred sscroll amid the [highlight]sstained and sshattered[/highlight].”
     
     Just as quickly as the serpent-woman appeared, she dissipates.
 + {ELX} [Watch the ghost]
     The ghost peers down at you from her perch atop the stone idol and speaks:
     
-    “My mother seeks in agony my final resting place in the [red]tombs outside this holy keep[/red]. Woefully, she does not know that my body and spirit are bound to this forgotten shrine, and so I must wait for her.”
+    “My mother seeks in agony my final resting place in the [highlight]tombs outside this holy keep[/highlight]. Woefully, she does not know that my body and spirit are bound to this forgotten shrine, and so I must wait for her.”
 	// + [To venture back outside the Scorched Keep] -> location_bridge_of_hollows
 + {RVK} [Examine the inscription closely]
     As if by some miracle, the heretofore unintelligible inscription across the collarbone of the stone idol shifts into writing you can understand:
@@ -52,7 +52,7 @@ An inscription is etched around her neck like a pendant. Tracing your fingers ov
 This alcove is filled with the smoke of a burning pyre set against the far wall. Hundreds of everburning candles surround the pyre, the wax collecting into brass bowls etched with snaking patterns.
 
 # IMAGE: images/shape-pillar.png
-Drawing nearer to the pyre, you see that only ashes remain of whatever proud servant of the queen was immolated here. However, a stone slab set into the base of the pyre has been etched with the symbol of [red]three lines in the shape of a pillar[/red].
+Drawing nearer to the pyre, you see that only ashes remain of whatever proud servant of the queen was immolated here. However, a stone slab set into the base of the pyre has been etched with the symbol of [highlight]three lines in the shape of a pillar[/highlight].
 
 - (curtain_left_opts)
 + {ELX} [Watch the ghosts]
@@ -63,8 +63,8 @@ Drawing nearer to the pyre, you see that only ashes remain of whatever proud ser
     You hold the burial mask over the roiling pyre flames, the brass glowing red hot. After hesitating, you thrust the mask onto your face. You expect blinding pain, but instead feel only a gentle, soothing warmth, as if you had submerged your head into a bath. Suddenly, a gentle voice fills your mind:
     “Euryale’s prayer is the key to the Throne of Cinder and the Coiled Crown you seek.”
     The brass burial mask then melts away from your face, collecting into a pool of rapidly cooling metal at your feet.
-    >>+ You have received the <b>revelation of Kaldera</b>. 
-    >>- You no longer have the <b>brass burial mask</b>.
+    [info font=system side=accent]You have received the <b>revelation of Kaldera</b>.[/info]
+    [info font=system side=highlight]You no longer have the <b>brass burial mask</b>.[/info]
     ~ RVK = true
     ~ BMK = false
 + [Go back out to the shrine] -> location_shrine_of_euryale
@@ -77,7 +77,7 @@ Drawing nearer to the pyre, you see that only ashes remain of whatever proud ser
 This alcove is filled with the smoke of a burning pyre set against the far wall. Hundreds of everburning candles surround the pyre, the wax collecting into brass bowls etched with snaking patterns.
 
 # IMAGE: images/shape-cross.png
-Drawing nearer to the pyre, you see that only ashes remain of whatever proud servant of the queen was immolated here. However, a stone slab set into the base of the pyre has been etched with the symbol of [red]three lines in the shape of a cross[/red].
+Drawing nearer to the pyre, you see that only ashes remain of whatever proud servant of the queen was immolated here. However, a stone slab set into the base of the pyre has been etched with the symbol of [highlight]three lines in the shape of a cross[/highlight].
 
 - (curtain_right_opts)
 + {ELX} [Watch the ghosts]
@@ -100,12 +100,12 @@ You try to throw the mask off your face, but it begins to melt and harden over y
     # IMAGE: images/brass-71.jpg
     In desperation you grab the healing potion from your belt and pour it over your face. Luckily, the magic liquid loosens and cools the searing mask.
     You toss the misshapen chunk of brass into the corner of the shrine, knocking over several everburning candles in the process, and wipe the soot and tears from your swollen eyes.
-    >>- You no longer have the <b>healing potion</b>.
+    [info font=system side=highlight]You no longer have the <b>healing potion</b>.[/info]
     ~ PTN = false
     + + [Return to the shrine] -> location_shrine_of_euryale
 + {not PTN} [Try to throw off the mask]
     # AUDIOLOOP: music/death.mp3
     You try to throw the mask off your face, but it begins to melt and harden over your eyes, nose, and mouth.
     You fall to the ground and lose consciousness, the molten mask on your face twisted into an eternally screaming visage.
-    >>! YOU DIED
+    [banner]YOU DIED[/banner]
     -> endgame

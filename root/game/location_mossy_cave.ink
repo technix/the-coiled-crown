@@ -17,9 +17,9 @@ A low tunnel leads further into the cave. When your eyes adjust to the gloom, yo
 + {not BMP} [Take the scroll tube]
     You rescue the scroll tube from the spent campfire and brush off the soot with gloved fingers.
     
-    Pulling open the stopper, a piece of dirty parchment falls into your hands. Unfurling it, you see it is a crudely drawn map showing many [red]twisting path[/red] leading toward a domed structure.
+    Pulling open the stopper, a piece of dirty parchment falls into your hands. Unfurling it, you see it is a crudely drawn map showing many [highlight]twisting path[/highlight] leading toward a domed structure.
     
-    >>+ You now have the <b>burnt map</b>.
+    [info font=system side=accent]You now have the <b>burnt map</b>.[/info]
     ~ BMP = true
     -> opts
 + [Push farther into the cave] -> witch_cave
@@ -27,7 +27,7 @@ A low tunnel leads further into the cave. When your eyes adjust to the gloom, yo
 = witch_cave
 # IMAGE: images/witch-77.jpg
 
-A black-clad young witch sits atop a bed of branches she has made for herself in this claustrophobic cave. The hovel is lit only by pungent candles and the flickering faces of jacko’- lanterns. Her gaze is cast downward, her painted fingers smudging wax across the skull of some captured forest creature. She [red]sings a gloomy song[/red] in an unknown language.
+A black-clad young witch sits atop a bed of branches she has made for herself in this claustrophobic cave. The hovel is lit only by pungent candles and the flickering faces of jacko’- lanterns. Her gaze is cast downward, her painted fingers smudging wax across the skull of some captured forest creature. She [highlight]sings a gloomy song[/highlight] in an unknown language.
 
 {WFG: The witch looks up, breathes deep of the air, and smiles. “I smell that figurine you carry, seeker of the crown. If you like, I can melt that figurine into a healing liquid to fill that empty vial of yours. Or, if you desire something stronger, you might offer it to my sister beneath the Scorched Keep, who can use it to mix a much more potent elixir.”}
 
@@ -42,8 +42,8 @@ A black-clad young witch sits atop a bed of branches she has made for herself in
         
         She hands the heavy vial back to you and picks up her waxcoated skull once more. “Be safe, seeker.”
         
-        >>+ You now have the <b>healing potion</b>. 
-        >>- You no longer have the <b>wax figurine</b>.
+        [info font=system side=accent]You now have the <b>healing potion</b>.[/info]
+        [info font=system side=highlight]You no longer have the <b>wax figurine</b>.[/info]
         ~ EPV = false
         ~ PTN = true
         ~ WFG = false

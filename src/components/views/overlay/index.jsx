@@ -1,39 +1,50 @@
 import { h } from 'preact';
-import { useCallback } from 'preact/hooks';
-import style from './index.module.css';
+import { useEffect, useState } from 'preact/hooks';
 
-import useAtrament from 'src/atrament/hooks';
-import markup from 'src/atrament/markup';
+import { useAtrament, useAtramentOverlay } from 'src/atrament/hooks';
+import preloadImages from 'src/utils/preload-images';
+import getImagesFromContent from "src/utils/get-images-from-content";
 
-import ContainerText from 'src/components/ui/container-text';
+import TextParagraph from 'src/components/ui/text-paragraph';
+import Markup from 'src/components/ui/markup';
+import CircleLoader from 'src/components/ui/animation-circles';
+
+import OverlayPresenter from './overlay';
+import ModalPresenter from './modal';
+
 
 const OverlayView = () => {
-  const { atrament, state } = useAtrament();
+  const { getAssetPath } = useAtrament();
+  const { overlay, closeOverlay } = useAtramentOverlay();
+  const [ isLoaded, setIsLoaded ] = useState(false);
 
-  const closeOverlay = useCallback(() => {
-    atrament.state.setSubkey('OVERLAY', 'activeOverlay', null);
-    atrament.state.setSubkey('OVERLAY', 'content', '');
-  }, [ atrament ]);
+  const preloader = async () => {
+    await preloadImages(getAssetPath, getImagesFromContent(overlay.content));
+    setIsLoaded(true);
+  }
 
-  if (!state.OVERLAY.activeOverlay) {
+  // preload all images for overlay
+  useEffect(() => {
+    if (overlay.current) {
+      preloader();
+    }
+  });
+
+  if (!overlay.current) {
     return <></>;
   }
-  
-  const content = state.OVERLAY.content.split('\n');
-  const title = state.OVERLAY.title;
-    
+
+  const content = isLoaded
+    ? overlay.content.map((item, index) => <TextParagraph key={index}><Markup content={item} /></TextParagraph>)
+    : <CircleLoader />;
+
+  if (overlay.display === 'modal') {
+    return (
+      <ModalPresenter title={overlay.title} closeOverlay={closeOverlay}>{content}</ModalPresenter>
+    );
+  }
   return (
-    <div class={style.overlay_container}>
-      <div class={style.overlay_header}>
-        <button class={style.button_back} onClick={closeOverlay}>❮</button>
-        {title && <div class={style.overlay_title}>{title}</div>}
-      </div>
-      <div class={[style.overlay_content, 'atrament-overlay'].join(' ')}>
-        <ContainerText fontSize={state.settings.fontSize}>
-          {content.map((item, index) => <p key={index}>{markup(item)}</p>)}
-        </ContainerText>
-      </div>
-    </div>
+    <OverlayPresenter title={overlay.title} closeOverlay={closeOverlay}>{content}</OverlayPresenter>
   );
 }
 

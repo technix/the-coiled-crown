@@ -10,13 +10,18 @@ lerna-debug.log*
 package-lock.json
 node_modules
 build
-build_singlefile
 build-ssr
 *.local
 
 # compiled ink
 root/**/*.js
 root/**/*.json
+
+# inklecate
+tools/inklecate*
+
+# neutralino
+tools/neutralino*
 
 # Editor directories and files
 .vscode/*
