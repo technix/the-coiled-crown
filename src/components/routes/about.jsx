@@ -1,9 +1,6 @@
 import { h } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
 import { route } from 'preact-router';
 import { Text } from '@eo-locale/preact';
-
-import { useAtrament, useAtramentState } from 'src/atrament/hooks';
 
 import Menu from 'src/components/menu';
 
@@ -15,28 +12,22 @@ import ContainerText from 'src/components/ui/container-text';
 import ContainerFlex from 'src/components/ui/container-flex';
 import LinkMenu from 'src/components/ui/link-menu';
 
+import StoryError from 'src/components/views/story-error';
+import useAboutContent from 'src/content/use-about-content';
+
+const mainMenu = () => route('/');
+
 const AboutRoute = () => {
-  const { evaluateInkFunction } = useAtrament();
-  const { metadata } = useAtramentState(['metadata']);
-  const [ aboutContent, setAboutContent ] = useState(' ');
-  const mainMenu = () => route('/');
-  
-  useEffect(() => {
-    const result = evaluateInkFunction(metadata.about);
-    if (result.output) {
-      setAboutContent(result.output);
-    } else {
-      setAboutContent(result.error);
-    }
-  }, [ metadata.about, setAboutContent, evaluateInkFunction ]);
+  const aboutContent = useAboutContent();
   return (
     <Container>
       <Menu isHomeScreen />
+      <StoryError />
       <ContainerText>
         <ContainerFlex>
           <Block> </Block>
           <Block>
-            {aboutContent.split("\n").map((item) => <TextParagraph key={item}><Markup isActive content={item} /></TextParagraph>)}
+            {aboutContent.map((item) => <TextParagraph key={item}><Markup isActive content={item} /></TextParagraph>)}
           </Block>
         </ContainerFlex>
         <Block>

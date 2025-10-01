@@ -2,7 +2,7 @@
 # author: A gamebook by Sersa Victory
 # toolbar: player_toolbar
 # about: game_about
-# cover: images/cover.jpg
+# cover: images/cover.jpg 50%
 
 INCLUDE about.ink
 INCLUDE toolbar.ink
