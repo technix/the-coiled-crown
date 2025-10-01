@@ -11,8 +11,10 @@ VAR EPV = true // empty potion vial
 VAR BIR = false // blessing of iron
 VAR BFR = false // blessing of fire
 
+VAR INVENTORY = false // display inventory in the toolbar
+
 === function player_toolbar()
-    [button onclick=player_inventory bordered=false display=modal][img]images/inventory.png[/img][/button]
+    {INVENTORY: [button onclick=player_inventory bordered=false display=modal][img]images/inventory.png[/img][/button] }
 
 === function player_inventory()
     [title]Inventory[/title]

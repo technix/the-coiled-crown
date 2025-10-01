@@ -11,12 +11,13 @@ Gone is the ruined city with its fallen slabs of stone and screeching crows pick
 Instead, you stand surrounded by an endless forest of thin bare trees jutting up from the dirt like bleached bones. Fog hangs heavy in all directions. Sticking your hand out in front of you, you feel as if you could grab the thick mist out of the air.
 A path of well-trodden dirt winds into the distance.
 
-- (opts1)
++ [Check your equipment]
+-
+You are carrying a longsword and an [highlight]empty potion vial[/highlight] that was once filled with healing liquid.
+Your cloak and leather armor are a little worse for wear, but you are otherwise unharmed.
+[info font=system]Click [img]images/inventory.png[/img] to view your inventory at any time.[/info]
+~ INVENTORY = true
 
-* [Check your equipment]
-    You are carrying a longsword and an [highlight]empty potion vial[/highlight] that was once filled with healing liquid.
-    Your cloak and leather armor are a little worse for wear, but you are otherwise unharmed.
-    -> opts1
 + [Follow the path through the fog]
 -
 
